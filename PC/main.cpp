@@ -34,7 +34,7 @@ char try_insert_item(int index)
 	sleep(tasks[index].start);
 	
 	sem_wait(&empty2);
-	pthread_mutex_trylock(&mutex);
+	pthread_mutex_lock(&mutex);
 
 	cout << "Task " << tasks[index].index << " is going to sleep for end." << endl;
 	sleep(tasks[index].end);
